@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite de Paraninfa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fff200;
+            overflow: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff0088;
+            margin-bottom: 20px;
+            animation: blink 1s infinite;
+            font-size: 90px;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        #no-button {
+            font-size: 20px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            border-radius: 5px;
+            position: absolute;
+        }
+
+        #yes-button {
+            font-size: 14px;
+            background-color: #1aff00;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Você aceita ser nossa paraninfa?</h1>
+    <div class="buttons">
+        <button id="no-button">Não</button>
+        <button id="yes-button" onclick="location.href='paraninfa-thankyou.html'">Sim</button>
+    </div>
+
+    <script>
+        const noButton = document.getElementById('no-button');
+
+        noButton.addEventListener('click', () => {
+            const randomX = Math.floor(Math.random() * (window.innerWidth - noButton.offsetWidth));
+            const randomY = Math.floor(Math.random() * (window.innerHeight - noButton.offsetHeight));
+
+            noButton.style.left = `${randomX}px`;
+            noButton.style.top = `${randomY}px`;
+        });
+    </script>
+</body>
+</html>
